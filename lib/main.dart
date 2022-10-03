@@ -1,9 +1,12 @@
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,10 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {
-        "/": (context) => HomePage(),
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
         "/Login": (context) => LoginPage(),
       },
     );
